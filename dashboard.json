@@ -1,0 +1,169 @@
+{
+  "dashboard": {
+    "title": "Alerts Overview",
+    "description": null,
+    "icon": "bar-chart",
+    "visibility": "all",
+    "editable": "editable_by_all",
+    "metadata": {
+      "version": 1
+    },
+    "widgets": [
+      {
+        "visualization": "facet_pie_chart",
+        "layout": {
+          "width": 1,
+          "height": 1,
+          "row": 1,
+          "column": 2
+        },
+        "widget_id": 5028949,
+        "account_id": 1394397,
+        "data": [
+          {
+            "nrql": "SELECT count(*) from Alerts since 1 week ago facet policy_name"
+          }
+        ],
+        "presentation": {
+          "title": "Alerts (by Policy)",
+          "notes": null,
+          "drilldown_dashboard_id": 574569
+        }
+      },
+      {
+        "visualization": "facet_pie_chart",
+        "layout": {
+          "width": 1,
+          "height": 1,
+          "row": 1,
+          "column": 2
+        },
+        "widget_id": 5028947,
+        "account_id": 1394397,
+        "data": [
+          {
+            "nrql": "SELECT count(*) from Alerts since 1 week ago facet condition_name"
+          }
+        ],
+        "presentation": {
+          "title": "Alerts (By Condition)",
+          "notes": null,
+          "drilldown_dashboard_id": 574569
+        }
+      },
+      {
+        "visualization": "facet_pie_chart",
+        "layout": {
+          "width": 1,
+          "height": 1,
+          "row": 1,
+          "column": 3
+        },
+        "widget_id": 5028992,
+        "account_id": 1394397,
+        "data": [
+          {
+            "nrql": "SELECT count(*) from Alerts since 1 week ago facet severity"
+          }
+        ],
+        "presentation": {
+          "title": "Alerts By Severity",
+          "notes": null,
+          "drilldown_dashboard_id": 574569
+        }
+      },
+      {
+        "visualization": "faceted_line_chart",
+        "layout": {
+          "width": 1,
+          "height": 1,
+          "row": 2,
+          "column": 1
+        },
+        "widget_id": 5028942,
+        "account_id": 1394397,
+        "data": [
+          {
+            "nrql": "SELECT count(*) from Alerts since 1 week ago facet policy_name timeseries"
+          }
+        ],
+        "presentation": {
+          "title": "Alerts (by Policy)",
+          "notes": null
+        }
+      },
+      {
+        "visualization": "facet_bar_chart",
+        "layout": {
+          "width": 1,
+          "height": 1,
+          "row": 2,
+          "column": 2
+        },
+        "widget_id": 5029023,
+        "account_id": 1394397,
+        "data": [
+          {
+            "nrql": "SELECT count(*) from Alerts since 1 week ago facet hourOf(timestamp)"
+          }
+        ],
+        "presentation": {
+          "title": "Alerts (by Time Of Day)",
+          "notes": null,
+          "drilldown_dashboard_id": null
+        }
+      },
+      {
+        "visualization": "facet_bar_chart",
+        "layout": {
+          "width": 1,
+          "height": 1,
+          "row": 2,
+          "column": 3
+        },
+        "widget_id": 5029040,
+        "account_id": 1394397,
+        "data": [
+          {
+            "nrql": "SELECT count(*) from Alerts since 1 week ago facet dateOf(timestamp)"
+          }
+        ],
+        "presentation": {
+          "title": "Alerts (by Date)",
+          "notes": null,
+          "drilldown_dashboard_id": null
+        }
+      },
+      {
+        "visualization": "event_table",
+        "layout": {
+          "width": 3,
+          "height": 1,
+          "row": 3,
+          "column": 1
+        },
+        "widget_id": 5028998,
+        "account_id": 1394397,
+        "data": [
+          {
+            "nrql": "SELECT * from Alerts since 1 day ago"
+          }
+        ],
+        "presentation": {
+          "title": "Raw Data",
+          "notes": null
+        }
+      }
+    ],
+    "filter": {
+      "event_types": [
+        "Alerts"
+      ],
+      "attributes": [
+        "condition_name",
+        "policy_name",
+        "severity"
+      ]
+    }
+  }
+}
