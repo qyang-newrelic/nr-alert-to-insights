@@ -2,8 +2,7 @@ var request = require('urllib-sync').request;
 var fs	= require('fs-extra');
 
 //set script properties
- var restAdminKey = '8462248a9a9ecb5c617f4cbb1c2d159e';
-// var restAdminKey = 'MTNH2L6ELV83BGBZGJHF03VLN362454K';
+var restAdminKey = '8462248a9a9ecb5c617f4cbb1c2d159e';
 var insightsApiKey = 'CGegpHKB4TcmljGIhviT2Ii2SrEwYziu';
 var accountId = 1971343;
 
