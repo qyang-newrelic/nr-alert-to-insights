@@ -3,9 +3,9 @@ var fs	= require('fs-extra');
 
 
 
-var restAdminKey = 'NRAA-1bc45a318aad3e3ef359b517891';
-var insightsApiKey = '8WhMjr0DtCWW3R_7KndP21fabEQP4j-L';
-var accountId = 2327256;
+var restAdminKey = 'nr_admin_key';
+var insightsApiKey = 'insight_insert_key';
+var accountId = eu_account_id;
 
 
 var notificationChannelName = 'Insights Alerts Webhook';
