@@ -18,12 +18,12 @@ var notificationList = getCurrentNotifications()
 // 2. Create NotificationChannel (If necessary)
 var insightsWebhookNotification = createNotificationChannel(notificationList);
 
-/* 3. Query Policies
+// 3. Query Policies
 var policyList = getPolicyList();
 
 // 5. Iterate Policies,	Bind Notification Channel 
 bindNotificationToPolicies(insightsWebhookNotification, policyList);
-*/
+
 
 //6. Create Dashboard If Necessary 
 if(!hasDashboardDeployed()){
@@ -156,9 +156,7 @@ function bindNotificationToPolicies(channelId, policyList){
 		var opts = {
 				method: 'PUT',
 				   headers: {
-				       'X-Api-Key': restAdminKey,
-				       'Content-Type': 'application/json',
-				       'Accept': 'application/json'
+				       'X-Api-Key': restAdminKey
 				    },
 				    timeout: 15000,
 				    data: data,
@@ -189,7 +187,7 @@ function hasDashboardDeployed(){
 		    dataType: 'json'
 		};
 		
-		var res = request('https://api.eu.newrelic.com/v2/dashboards.json', options);
+		var res = request('https://api.eu.newrelic.com/v2/new_dashboards.json', options);
 		if (res.err || res.status != 200) {
 			console.log("error requesting policies: ", res.err, res.status);
 			throw new Error("Error retrieving legacy alert policies");
