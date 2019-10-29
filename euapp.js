@@ -158,9 +158,9 @@ function bindNotificationToPolicies(channelId, policyList){
 				   headers: {
 				       'X-Api-Key': restAdminKey
 				    },
-				    timeout: 15000,
-				    data: data,
-				    dataAsQueryString: true
+				    'timeout': 15000,
+				    'data': data,
+				    'dataAsQueryString': true
 				};
 		
 		console.log("Linking Notification Channel " + channelId + " to Policy " + policyList[p].id + " Full Details = URL: " + linkChannelUrl + ", Options: " + JSON.stringify(opts) + '\n');
